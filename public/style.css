@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  box-sizing: border-box;
+}
+header {
+  background-image: url("img/5476306seamless.jpg");
+}
+
+/*---------------------header nav---------------------*/
+header nav {
+  display: flex;
+  justify-content: space-around;
+  /*top and bottom | left and right*/
+  padding: 1em 0;
+  background-color: rgba(0, 0, 0, 0.274);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul *:not(:first-of-type) {
+  margin-left: 2em;
+}
+
+nav * {
+  color: rgb(255, 254, 255);
+}
+
+nav h1 a {
+  text-shadow: 3px 3px 5px rgba(255, 159, 247, 0.76);
+}
+
+/*---------------------header intro---------------------*/
+article p {
+  font-size: 1.5em;
+  color: aliceblue;
+}
+
+header article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6em 3em;
+}
+
+#header_img {
+  width: 30rem;
+}
+@media only screen and (max-width: 700px) {
+  #header_img {
+    width: 15rem;
+  }
+}
+
+/*-------------------about--------------- */
+.about {
+  background-color: rgba(108, 67, 210, 0.511);
+}
+.about h2 {
+  font-size: xx-large;
+}
+.about div {
+  font-size: small;
+}
+.about button {
+  padding: 0.5em;
+  background-color: aliceblue;
+  border-radius: 3em;
+  border: solid 5px violet;
+}
+.about-info {
+  margin: 0.5em;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.about-info > * {
+  margin: 0.5rem;
+}
+.about-info a {
+  text-decoration: underline;
+  color: aqua;
+}
+/*--------------about-grid-setup------------------------------*/
+.about h2 {
+  grid-area: title;
+}
+.about div p {
+  grid-area: text;
+}
+.about-info button {
+  grid-area: button;
+}
+.about-info a {
+  grid-area: email;
+}
+.about {
+  padding: 5em 10em;
+  display: grid;
+  grid-template-areas:
+    "title text text"
+    "title button email";
+  gap: 1em;
+}
+
+/*-------------------about-ver-MOBILE---------------------- */
+@media only screen and (max-width: 768px) {
+  .about {
+    padding: 5em;
+    grid-template-areas:
+      "title title"
+      "text text"
+      "button email";
+  }
+}
+
+main {
+  background-image: url("img/5476306seamless.jpg");
+}
+
+/*-------------------CV------------------------ */
+.profile-formation {
+  grid-area: formation;
+}
+.profile-experiences {
+  grid-area: experiences;
+}
+.profile-competences {
+  grid-area: competences;
+}
+.cv {
+  display: grid;
+  padding: 3em 10em;
+  grid-template-areas:
+    "formation competences"
+    "experiences competences";
+  gap: 1em;
+}
+
+@media only screen and (max-width: 700px) {
+  .cv {
+    padding: 3em;
+    grid-template-areas:
+      "formation"
+      "experiences"
+      "competences";
+  }
+}
+
+/*-------------------CV-font---------------------*/
+.cv section > h2 {
+  color: rgb(121, 25, 128);
+  padding-bottom: 1em;
+}
+.list-name-date > h2 {
+  color: rgb(92, 0, 83);
+  text-shadow: 1px 1px 2px pink;
+}
+.profile-list p {
+  width: 70%;
+  font-size: medium;
+}
+
+.profile-list div h5 {
+  color: rgb(40, 40, 40);
+  font-size: small;
+}
+@media only screen and (max-width: 600px) {
+  .profile-list p {
+    width: 100%;
+    font-size: medium;
+  }
+}
+
+/*-------------------CV-formation--------------------- */
+.profile-formation {
+  background-color: rgba(224, 224, 224, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  padding: 2em;
+  border-radius: 10px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-formation .profile-list h3 {
+  width: 60%;
+  padding-bottom: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .profile-formation .list-name-date {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*-------------------CV-experiences--------------------- */
+.profile-experiences {
+  background-color: rgba(140, 140, 140, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  padding: 2em;
+  border-radius: 10px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-experiences .profile-list p {
+  padding-bottom: 1em;
+  text-align: justify;
+}
+@media only screen and (min-width: 600px) {
+  .profile-experiences .list-name-date {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+/*-------------------CV-competences-text-------------------- */
+.profile-competences {
+  background-color: rgba(93, 93, 93, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  padding: 2em;
+  border-radius: 10px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-competences div h2 {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  font-size: small;
+  font-weight: bolder;
+  padding-bottom: 0.5em;
+}
+.profile-competences div ul {
+  color: aliceblue;
+  font-size: smaller;
+  font-weight: lighter;
+  padding-bottom: 1em;
+}
+/*-------------------CV-competences-grid-setup-------------------- */
+@media only screen and (max-width: 600px) {
+  .compt-logiciels {
+    grid-area: compt-logiciels;
+  }
+  .compt-langues {
+    grid-area: compt-langues;
+  }
+  .compt-interets {
+    grid-area: compt-interets;
+  }
+  .compt-certifications {
+    grid-area: compt-certifications;
+  }
+  .compt-certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-competences {
+    display: grid;
+    grid-template-areas:
+      "compt-logiciels compt-langues"
+      "compt-interets compt-atouts"
+      "compt-certifications compt-certifications";
+    gap: 1em;
+  }
+}
+
+/*---------------------footer------------------------*/
+footer {
+  background-color: #6b43d2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em 0;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-brands {
+  font-size: 2em;
+  color: aliceblue;
+  padding: 0.3em 0.6em;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    padding: 5em;
+  }
+  .cv {
+    padding: 5em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about {
+    padding: 5em 20em;
+  }
+  .cv {
+    padding: 5em 20em;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .about {
+    padding: 0em;
+  }
+  .cv {
+    padding: 0em;
+  }
+}
